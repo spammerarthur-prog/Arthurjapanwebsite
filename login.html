@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Welcome | Japan Culture</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+  <main class="login-container">
+
+    <div class="login-japanese">
+      日本の味
+    </div>
+
+    <p class="login-label">
+      JAPAN CULTURE
+    </p>
+
+    <h1>
+      ようこそ
+    </h1>
+
+    <p class="login-subtitle">
+      WELCOME TO JAPAN CULTURE
+    </p>
+
+
+    <form id="visitorForm">
+
+      <div class="input-group">
+
+        <label for="visitorInput">
+          YOUR NAME
+        </label>
+
+        <input
+          type="text"
+          id="visitorInput"
+          placeholder="Enter your name"
+          required
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label for="classInput">
+          YOUR CLASS
+        </label>
+
+        <input
+          type="text"
+          id="classInput"
+          placeholder="Example: 10A"
+          required
+        >
+
+      </div>
+
+
+      <button type="submit" class="login-button">
+        ENTER EXPERIENCE →
+      </button>
+
+    </form>
+
+
+    <p class="login-footer">
+      YOUR JOURNEY BEGINS HERE
+    </p>
+
+  </main>
+
+
+  <script>
+
+    const form = document.getElementById("visitorForm");
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("visitorInput").value.trim();
+      const studentClass = document.getElementById("classInput").value.trim();
+
+      if (!name || !studentClass) {
+        return;
+      }
+
+      localStorage.setItem("visitorName", name);
+      localStorage.setItem("visitorClass", studentClass);
+
+      window.location.href = "index.html";
+
+    });
+
+  </script>
+
+</body>
+
+</html>
