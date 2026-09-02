@@ -1,0 +1,1253 @@
+/* =========================================
+   JAPAN CULTURE — GLOBAL STYLES
+   ========================================= */
+
+:root {
+  --black: #0b0b0b;
+  --dark: #111111;
+  --cream: #f4f0e8;
+  --white: #ffffff;
+  --red: #d71920;
+  --gray: #999999;
+  --line: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(180, 25, 25, 0.25),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #0d0d0d 0%, #171717 50%, #0b0b0b 100%);
+  color: #f5f1e8;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+     NAVBAR
+     ========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5vw;
+
+  z-index: 1000;
+
+  background: rgba(11, 11, 11, 0.75);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--red);
+  margin-left: 6px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 38px;
+}
+
+.navbar nav a {
+  position: relative;
+
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  color: #aaa;
+
+  transition: 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: var(--white);
+}
+
+.navbar nav a::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--red);
+
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+  width: 100%;
+}
+
+.visitor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.visitor span {
+  color: #666;
+}
+
+.visitor strong {
+  color: var(--cream);
+}
+
+/* =========================================
+     HERO
+     ========================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  padding: 140px 10vw 100px;
+
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+}
+
+.eyebrow {
+  margin-bottom: 25px;
+
+  color: var(--red);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(70px, 12vw, 180px);
+
+  line-height: 0.82;
+
+  letter-spacing: -8px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero-text {
+  max-width: 480px;
+
+  margin-top: 40px;
+
+  color: #aaa;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.button {
+  padding: 16px 25px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: var(--cream);
+  color: var(--black);
+}
+
+.primary:hover {
+  background: var(--red);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.secondary {
+  border: 1px solid #555;
+}
+
+.secondary:hover {
+  border-color: var(--cream);
+  transform: translateY(-3px);
+}
+
+/* Giant Japanese character */
+
+.hero-symbol {
+  position: absolute;
+
+  right: -5vw;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 50vw;
+  height: 50vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+.hero-symbol span {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 30vw;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  line-height: 1;
+}
+
+/* =========================================
+     SECTIONS
+     ========================================= */
+
+.intro,
+.featured {
+  padding: 150px 10vw;
+}
+
+.section-number {
+  color: var(--red);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  margin-bottom: 45px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 10vw;
+}
+
+.intro h2,
+.featured h2,
+.culture-banner h2 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(50px, 7vw, 100px);
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+}
+
+em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.intro-grid > div {
+  padding-top: 15px;
+}
+
+.intro-grid p {
+  max-width: 430px;
+
+  margin-bottom: 25px;
+
+  color: #999;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.text-link {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--red);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--red);
+}
+
+/* =========================================
+     FEATURED FOOD
+     ========================================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 70px;
+}
+
+.section-heading .text-link {
+  margin-bottom: 10px;
+}
+
+.food-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.food-card {
+  min-height: 420px;
+
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  position: relative;
+
+  background: #151515;
+
+  border: 1px solid #222;
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+
+  border-color: #444;
+}
+
+.food-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -55%);
+
+  font-size: 120px;
+
+  transition: 0.4s ease;
+}
+
+.food-card:hover .food-icon {
+  transform: translate(-50%, -55%) scale(1.15) rotate(-4deg);
+}
+
+.food-card > span {
+  position: absolute;
+
+  top: 30px;
+  left: 30px;
+
+  color: #555;
+
+  font-size: 12px;
+}
+
+.food-card h3 {
+  position: relative;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 38px;
+}
+
+.food-card p {
+  position: relative;
+
+  margin-top: 5px;
+
+  color: var(--red);
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================
+     CULTURE BANNER
+     ========================================= */
+
+.culture-banner {
+  min-height: 70vh;
+
+  padding: 120px 10vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  background: linear-gradient(120deg, #171717, #0b0b0b);
+
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.circle-button {
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #555;
+
+  border-radius: 50%;
+
+  font-size: 30px;
+
+  transition: 0.4s ease;
+}
+
+.circle-button:hover {
+  background: var(--red);
+
+  border-color: var(--red);
+
+  transform: rotate(45deg);
+}
+
+/* =========================================
+     FOOTER
+     ========================================= */
+
+footer {
+  padding: 70px 10vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #222;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.footer-logo span {
+  color: var(--red);
+}
+
+footer p {
+  color: #666;
+
+  font-size: 13px;
+}
+
+footer small {
+  color: #444;
+}
+
+/* =========================================
+     BACK TO TOP
+     ========================================= */
+
+.back-top {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid #555;
+
+  border-radius: 50%;
+
+  background: #111;
+  color: var(--cream);
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(15px);
+
+  transition: 0.3s ease;
+
+  z-index: 900;
+}
+
+.back-top.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.back-top:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* =========================================
+     MOBILE
+     ========================================= */
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 70px;
+    padding: 0 6vw;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .visitor {
+    display: none;
+  }
+
+  .hero {
+    padding: 130px 7vw 80px;
+  }
+
+  .hero h1 {
+    font-size: 18vw;
+    letter-spacing: -4px;
+  }
+
+  .hero-symbol {
+    right: -25vw;
+
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .intro,
+  .featured {
+    padding: 100px 7vw;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-card {
+    min-height: 350px;
+  }
+
+  .culture-banner {
+    padding: 100px 7vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .circle-button {
+    width: 90px;
+    height: 90px;
+  }
+
+  footer {
+    padding: 60px 7vw;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+}
+/* CULTURE PAGE */
+
+.page-hero {
+  min-height: 75vh;
+  padding: 180px 5vw 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  margin-top: 30px;
+  font-size: clamp(70px, 11vw, 170px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.page-hero h1 em {
+  color: var(--red);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.page-hero > p:last-child {
+  max-width: 550px;
+  margin-top: 45px;
+  color: var(--gray);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* CULTURE GRID */
+
+.culture-section {
+  padding: 140px 5vw;
+}
+
+.culture-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.culture-card {
+  min-height: 420px;
+  padding: 45px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.culture-card:hover {
+  transform: translateY(-8px);
+  background: var(--dark);
+}
+
+.culture-card > span {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.culture-symbol {
+  margin: 45px 0 30px;
+  font-size: 70px;
+  color: var(--red);
+}
+
+.culture-card h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.culture-card p {
+  max-width: 500px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .culture-card {
+    min-height: 350px;
+  }
+
+  .page-hero {
+    padding-top: 150px;
+  }
+}
+/* FESTIVAL PAGE */
+
+.festival-section {
+  padding: 140px 5vw;
+}
+
+.festival-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.festival-card {
+  min-height: 430px;
+  padding: 45px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.festival-card:hover {
+  transform: translateY(-8px);
+  background: var(--dark);
+}
+
+.festival-number {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.festival-symbol {
+  margin: 40px 0 25px;
+  font-size: 65px;
+}
+
+.festival-card h3 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.japanese-name {
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.festival-card > p:last-child {
+  max-width: 500px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .festival-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .festival-card {
+    min-height: 350px;
+  }
+}
+/* FOOD DETAIL PAGE */
+
+.food-detail {
+  min-height: 85vh;
+  padding: 150px 5vw 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.food-detail-content {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.food-detail-icon {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  font-size: 150px;
+  background: var(--dark);
+}
+
+.food-japanese {
+  color: var(--red);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.food-detail h1 {
+  font-size: clamp(70px, 9vw, 140px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.food-description {
+  max-width: 600px;
+  margin: 35px 0;
+  color: var(--gray);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.food-info {
+  display: flex;
+  gap: 70px;
+  margin-bottom: 45px;
+}
+
+.food-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.food-info span {
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.food-info strong {
+  font-size: 15px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .food-detail-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .food-detail-icon {
+    min-height: 300px;
+    font-size: 100px;
+  }
+
+  .food-info {
+    gap: 35px;
+  }
+}
+/* =========================
+   LOGIN / WELCOME PAGE
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 40%, #2a2a2a 0%, var(--black) 60%);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login-container {
+  width: min(620px, 90%);
+  text-align: center;
+  padding: 60px 0;
+}
+
+.login-japanese {
+  font-size: 28px;
+  letter-spacing: 0.25em;
+  color: var(--red);
+  margin-bottom: 35px;
+}
+
+.login-label {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  color: var(--gray);
+}
+
+.login-container h1 {
+  margin: 25px 0 10px;
+  font-size: clamp(70px, 12vw, 150px);
+  line-height: 0.9;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  color: var(--gray);
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  margin-bottom: 55px;
+}
+
+#visitorForm {
+  max-width: 430px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gray);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  outline: none;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 17px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-bottom-color: var(--red);
+}
+
+.input-group input::placeholder {
+  color: #555;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 19px 25px;
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-button:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.login-footer {
+  margin-top: 55px;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 40px 0;
+  }
+
+  .login-japanese {
+    font-size: 22px;
+  }
+
+  .login-subtitle {
+    margin-bottom: 40px;
+  }
+}
+/* JAPANESE INK BACKGROUND */
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+body::before {
+  width: 420px;
+  height: 150px;
+  top: 15%;
+  left: -120px;
+  background: rgba(150, 20, 20, 0.18);
+  transform: rotate(-18deg);
+  animation: inkFloat 9s ease-in-out infinite;
+}
+
+body::after {
+  width: 500px;
+  height: 180px;
+  bottom: 12%;
+  right: -180px;
+  background: rgba(255, 255, 255, 0.07);
+  transform: rotate(20deg);
+  animation: inkFloatReverse 11s ease-in-out infinite;
+}
+
+@keyframes inkFloat {
+  0%,
+  100% {
+    transform: rotate(-18deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(-12deg) translate(70px, 30px);
+  }
+}
+
+@keyframes inkFloatReverse {
+  0%,
+  100% {
+    transform: rotate(20deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(14deg) translate(-60px, -25px);
+  }
+}
+
+/* JAPANESE BRUSH STROKES */
+
+.ink-stroke {
+  position: fixed;
+  width: 420px;
+  height: 90px;
+  background: #111;
+  opacity: 0.12;
+  border-radius: 50% 20% 60% 30%;
+  transform: rotate(-12deg);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: -1;
+  animation: brushMove 12s ease-in-out infinite;
+}
+
+.ink-stroke.one {
+  top: 20%;
+  left: -180px;
+}
+
+.ink-stroke.two {
+  bottom: 18%;
+  right: -180px;
+  transform: rotate(18deg);
+  animation-delay: -5s;
+}
+
+@keyframes brushMove {
+  0%,
+  100% {
+    transform: rotate(-12deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateX(100px);
+  }
+}
+.ink-stroke {
+  clip-path: polygon(
+    0% 35%,
+    8% 20%,
+    18% 28%,
+    30% 12%,
+    45% 24%,
+    60% 8%,
+    75% 22%,
+    88% 15%,
+    100% 30%,
+    94% 65%,
+    82% 55%,
+    68% 72%,
+    52% 58%,
+    38% 78%,
+    24% 60%,
+    10% 70%
+  );
+}
+.japanese-seal {
+  position: fixed;
+  right: 7%;
+  top: 22%;
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #b21f24;
+  color: #b21f24;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  opacity: 0.75;
+  transform: rotate(-8deg);
+  pointer-events: none;
+  z-index: -1;
+  animation: sealFloat 6s ease-in-out infinite;
+}
+
+@keyframes sealFloat {
+  0%,
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-5deg) translateY(12px);
+  }
+}
+body {
+  background-image: radial-gradient(
+      circle at 15% 20%,
+      rgba(180, 25, 25, 0.25),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 18px,
+      rgba(255, 255, 255, 0.015) 19px,
+      transparent 20px
+    ),
+    linear-gradient(135deg, #0d0d0d 0%, #171717 50%, #0b0b0b 100%);
+}
+.ink-stroke {
+  box-shadow: 20px 8px 18px rgba(0, 0, 0, 0.15),
+    -15px -5px 12px rgba(0, 0, 0, 0.08);
+  mix-blend-mode: screen;
+}
+.hero-ink-circle {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 3px solid rgba(178, 31, 36, 0.45);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  animation: inkCircle 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-ink-circle::before,
+.hero-ink-circle::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(178, 31, 36, 0.2);
+  border-radius: 48% 52% 46% 54%;
+}
+
+.hero-ink-circle::after {
+  inset: 35px;
+  transform: rotate(8deg);
+}
+
+@keyframes inkCircle {
+  0%,
+  100% {
+    transform: rotate(-12deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-7deg) scale(1.04);
+  }
+}
+.hero-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-symbol span {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  font-size: 180px;
+  font-weight: 700;
+}
